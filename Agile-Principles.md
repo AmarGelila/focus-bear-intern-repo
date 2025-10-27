@@ -23,16 +23,17 @@ As a front end developer agile philsophy helps me to
 #### Summarize the main differences between Scrum and Kanban in your own words.
 
 ##### Scrum
-Release: Fixed length sprints    
-Roles: Scrum Master            
-Flexability: Non-flexable            
-Mertics: Velocity                
+- Release: Fixed length sprints    
+- Roles: Scrum Master            
+- Flexability: Non-flexable            
+- Mertics: Velocity                
 
 ##### Kanban
-Release: Continuous flow    
-Roles: Agile Coach
-Flexability: Flexable
-Metrics: Cycle tiem
+
+- Release: Continuous flow
+- Roles: Agile Coach
+- Flexability: Flexable
+- Metrics: Cycle tiem
 
 #### Identify one Agile principle you think will be most useful in your work.
 The highest priority is to satisfy the customer through early and continuous delivery of valuable software.
