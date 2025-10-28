@@ -1,5 +1,5 @@
 # Amar Essam Gelila Internship Time Plan
-## October 27th to December 20th
-## Monday to Friday
-## 3:30 PM to 7:30 PM ADET
-## Fully Remote
+## Date: October 27th to December 20th
+## Days: Monday to Friday
+## Hours: 3:30 PM to 7:30 PM AEDT
+## Location: Fully Remote
