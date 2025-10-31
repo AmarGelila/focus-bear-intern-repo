@@ -19,6 +19,7 @@
 - CTRL + B
 - CTRL + /
 - CTRL + SHIFT + H
+- CTRL + SHIFT + F
 
 #### How can keyboard shortcuts improve your productivity?
 Saves time by accelerating routine things 
