@@ -11,3 +11,5 @@
 Speeding up Debugging and Code Review
 
 #### How can poor commit messages cause issues later?
+
+Teammates will not determine changes and code erros easily
