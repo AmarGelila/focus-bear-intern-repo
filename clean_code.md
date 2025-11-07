@@ -12,7 +12,7 @@
 - Efficiency :–
       Clean Code is efficient , means it uses the minimum resources. 
 
-
+***
 
 ### Code Formatting & Style Guides #45
 
@@ -30,7 +30,7 @@
 #### Did formatting the code make it easier to read?
 Yes in most cases but there are cases where prettier may make it look ugly and overwhelmed
 
-
+***
 
 ### Naming Variables & Functions #44
 #### What makes a good variable or function name?
@@ -43,6 +43,21 @@ Yes in most cases but there are cases where prettier may make it look ugly and o
   
 #### How did refactoring improve code readability?
 - By ensuring best practices are applyed so all teammates are able to read and understand the code
+
+
+*** 
+
+### Writing Small, Focused Functions #43
+
+#### Why is breaking down functions beneficial?
+- Each function can be tested in isolation
+- Enhance Reusability
+- Enhance Readability
+  
+#### How did refactoring improve the structure of the code?
+- Better Debugging Experience
+- Clearer responsability sepration
+- Make it easier to add new capabilities
 
 
 
