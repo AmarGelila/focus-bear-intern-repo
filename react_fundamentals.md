@@ -7,3 +7,13 @@ None
 
 
 ***
+
+### Understanding Components & Props #31
+
+#### Why are components important in React?
+- Enhance Reusability
+- Speration of concerns
+- Can be nested to form complex components
+- Props make them dynamic and configurable
+
+  *** 
