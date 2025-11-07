@@ -13,7 +13,9 @@
       Clean Code is efficient , means it uses the minimum resources. 
 
 
+
 ### Code Formatting & Style Guides #45
+
 #### Why is code formatting important?
 - Easier code review
 - Single source of truth
@@ -27,6 +29,34 @@
 
 #### Did formatting the code make it easier to read?
 Yes in most cases but there are cases where prettier may make it look ugly and overwhelmed
+
+
+
+### Naming Variables & Functions #44
+#### What makes a good variable or function name?
+- Use of descriptive and specific names
+- Stick to established naming patterns
+  
+#### What issues can arise from poorly named variables?
+- Not understanding the code
+- Hard to refactor and maintain
+  
+#### How did refactoring improve code readability?
+- By ensuring best practices are applyed so all teammates are able to read and understand the code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
