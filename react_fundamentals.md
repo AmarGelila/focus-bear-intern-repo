@@ -16,4 +16,13 @@ None
 - Can be nested to form complex components
 - Props make them dynamic and configurable
 
-  *** 
+***
+
+
+###  Handling State & User Input #30
+
+#### What happens if we modify state directly instead of using setState?
+The UI does not update when click on add button as react renders only when a state changes 
+
+
+***
