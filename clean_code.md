@@ -60,6 +60,19 @@ Yes in most cases but there are cases where prettier may make it look ugly and o
 - Make it easier to add new capabilities
 
 
+*** 
+
+### Refactoring Code for Simplicity #41
+#### What made the original code complex?
+- Long functions
+- Duplicated code
+- DRY principle was not applied
+- Complex logic
+  
+#### How did refactoring improve it?
+- Made it easier to maintain and scale
+- Made it readable and easily understandable
+- Improved performance
 
 
 
