@@ -92,6 +92,17 @@ Yes in most cases but there are cases where prettier may make it look ugly and o
 - Leave Commented-out code "should be deleted"
 
 
+***
+
+### Handling Errors & Edge Cases #39
+
+#### What was the issue with the original code?
+The original code does not provide any error handling or edge cases checks which may cause many runtime errors and make the User Experience very bad
+
+#### How does handling errors improve reliability?
+- Providing error fallback makes the website works even there is a error
+- Provide instructions for the user on how to enter the right data
+
 
 
 
