@@ -1,3 +1,17 @@
+// Before Refactor
+function processUserData(userData) {
+  let result = {};
+  
+  result.fullName = userData.firstName + " " + userData.lastName;
+  result.ageGroup = userData.age > 18 ? "adult" : "minor";
+  result.emailDomain = userData.email.split("@")[1];
+  result.discount = userData.isVIP ? 0.2 : 0.1;
+  result.membershipYears = new Date().getFullYear() - userData.joinDate.getFullYear();
+  
+  return result;
+}
+
+// After Refactor
 function processUserData(userData) {
   if (!userData || typeof userData !== "object")
     throw new TypeError("User Data must be a valid object");
