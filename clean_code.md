@@ -75,7 +75,21 @@ Yes in most cases but there are cases where prettier may make it look ugly and o
 - Improved performance
 
 
+*** 
 
+### Commenting & Documentation #40
+
+#### When should you add comments?
+- Explain why this code
+- Clarify complex algorithm
+- Warn about side effects
+- Explain how to deal with the code 
+  
+#### When should you avoid comments and instead improve the code?
+- When the code is messy and unclean
+- Restate the what this code do "Code be self explantory"
+- Justify bad code
+- Leave Commented-out code "should be deleted"
 
 
 
