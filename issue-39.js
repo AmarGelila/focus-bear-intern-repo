@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 // function that doesn’t properly handle errors or invalid inputs
 function processUserData(userData) {
   let result = {};
@@ -15,7 +13,6 @@ function processUserData(userData) {
 }
 
 // After Refactoring
->>>>>>> 0fde26e (Add issue-39.js)
 function processUserData(userData) {
   if (!userData || typeof userData !== "object")
     throw new TypeError("User Data must be a valid object");
