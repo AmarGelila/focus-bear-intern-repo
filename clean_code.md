@@ -104,7 +104,170 @@ The original code does not provide any error handling or edge cases checks which
 - Provide instructions for the user on how to enter the right data
 
 
+***
 
+### Avoiding Code Duplication #42
+
+Code inlcudes Duplicatoin:-
+```
+function calculateTotalPrice(cart) {
+  let total = 0;
+  
+  // Calculate subtotal
+  for (let i = 0; i < cart.length; i++) {
+    total += cart[i].price * cart[i].quantity;
+  }
+  
+  // Apply discount based on total
+  if (total > 1000) {
+    total = total * 0.9; // 10% discount
+  } else if (total > 500) {
+    total = total * 0.95; // 5% discount
+  }
+  
+  // Add shipping
+  if (total < 50) {
+    total += 10;
+  } else if (total < 100) {
+    total += 5;
+  } else {
+    total += 0;
+  }
+  
+  return total;
+}
+
+function displayCartSummary(cart) {
+  let subtotal = 0;
+  
+  // Calculate subtotal (same logic as above)
+  for (let i = 0; i < cart.length; i++) {
+    subtotal += cart[i].price * cart[i].quantity;
+  }
+  
+  // Apply discount (same logic as above)
+  let discountedTotal = subtotal;
+  if (subtotal > 1000) {
+    discountedTotal = subtotal * 0.9;
+  } else if (subtotal > 500) {
+    discountedTotal = subtotal * 0.95;
+  }
+  
+  // Calculate shipping (same logic as above)
+  let shipping = 0;
+  if (discountedTotal < 50) {
+    shipping = 10;
+  } else if (discountedTotal < 100) {
+    shipping = 5;
+  }
+  
+  console.log(`Subtotal: $${subtotal}`);
+  console.log(`Discount: $${subtotal - discountedTotal}`);
+  console.log(`Shipping: $${shipping}`);
+  console.log(`Total: $${discountedTotal + shipping}`);
+}
+
+function checkFreeShippingEligibility(cart) {
+  let subtotal = 0;
+  
+  // Calculate subtotal (same logic again!)
+  for (let i = 0; i < cart.length; i++) {
+    subtotal += cart[i].price * cart[i].quantity;
+  }
+  
+  // Apply discount (same logic again!)
+  let discountedTotal = subtotal;
+  if (subtotal > 1000) {
+    discountedTotal = subtotal * 0.9;
+  } else if (subtotal > 500) {
+    discountedTotal = subtotal * 0.95;
+  }
+  
+  return discountedTotal >= 100;
+}
+
+// Example usage
+const shoppingCart = [
+  { name: "Laptop", price: 800, quantity: 1 },
+  { name: "Mouse", price: 25, quantity: 2 },
+  { name: "Keyboard", price: 75, quantity: 1 }
+];
+
+console.log("Total Price:", calculateTotalPrice(shoppingCart));
+displayCartSummary(shoppingCart);
+console.log("Free Shipping:", checkFreeShippingEligibility(shoppingCart));
+```
+After Refactoring :-
+```
+function calculateTotalPrice(cart) {
+  return processCart(cart).total;
+}
+
+function displayCartSummary(cart) {
+  let cartInfo = processCart(cart);
+
+  console.log(`Subtotal: $${cartInfo.subtotal}`);
+  console.log(`Discount: $${cartInfo.discount}`);
+  console.log(`Shipping: $${cartInfo.shipping}`);
+  console.log(`Total: $${cartInfo.total}`);
+}
+function checkFreeShippingEligibility(cart) {
+  const cartInfo = processCart(cart);
+  return cartInfo.shipping === 0;
+}
+function processCart(cart) {
+  let cartInfo = {
+    subtotal: 0,
+    discount: 0,
+    discountedTotal: 0,
+    shipping: 0,
+    total: 0,
+  };
+
+  cart.reduce((acc, crr) => {
+    acc += crr.price * crr.quantity;
+    return acc;
+  }, 0);
+
+  if (cartInfo.subtotal > 1000) {
+    cartInfo.discount = cartInfo.subtotal * 0.1;
+  } else if (subtotal > 500) {
+    cartInfo.discount = cartInfo.subtotal * 0.05;
+  }
+
+  cartInfo.discountedTotal = cartInfo.subtotal - cartInfo.discount;
+  if (cartInfo.discountedTotal < 50) {
+    cartInfo.shipping = 10;
+  } else if (cartInfo.discountedTotal < 100) {
+    cartInfo.shipping = 5;
+  }
+
+  cartInfo.total = cartInfo.discountedTotal + cartInfo.shipping;
+
+  return cartInfo;
+}
+
+// Example usage
+const shoppingCart = [
+  { name: "Laptop", price: 800, quantity: 1 },
+  { name: "Mouse", price: 25, quantity: 2 },
+  { name: "Keyboard", price: 75, quantity: 1 },
+];
+
+console.log("Total Price:", calculateTotalPrice(shoppingCart));
+displayCartSummary(shoppingCart);
+console.log("Free Shipping:", checkFreeShippingEligibility(shoppingCart));```
+```
+
+#### What were the issues with duplicated code?
+- There are many duplicated calculations and this uses a lot of memory and affects performance
+- When want to change something in the code developer has to make the same change in the multiple places.
+  
+#### How did refactoring improve maintainability?
+Refactoring and applying DRY principle makes a single source of truth so if I want to fix somthing I fix it in one place and make it easy to add more functionalities and grow the code.
+
+
+***
 
 
 
