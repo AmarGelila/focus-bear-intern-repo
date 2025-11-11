@@ -75,3 +75,14 @@ function Button({ content, handleClick }) {
 
 ***
 
+
+### Working with Lists & User Input #28
+
+#### What are some common issues when working with lists in React?
+React requires that each list item should has a unique key in its list , and sometiems such as required in the task the list item does not have a unique id so I had to use array indices as keys which works good but would be better if each list item has a unique id in its stucture
+
+#### Task :-
+See [Form.jsx](./react-project/src/components/Form.jsx)
+
+***
+
