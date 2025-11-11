@@ -44,6 +44,72 @@ Yes in most cases but there are cases where prettier may make it look ugly and o
 #### How did refactoring improve code readability?
 - By ensuring best practices are applyed so all teammates are able to read and understand the code
 
+#### Task 
+
+Unclear componenet:-
+```
+// ❌ Unclear component
+const Comp = ({ d, l, onC }) => {
+  const [s, setS] = useState([]);
+  const [v, setV] = useState(false);
+
+  const h = async () => {
+    setV(true);
+    try {
+      const r = await fetch("/api");
+      const j = await r.json();
+      setS(j);
+    } catch (e) {
+      console.log(e);
+    } finally {
+      setV(false);
+    }
+  };
+
+  return (
+    <div>
+      {l && <button onClick={onC}>Close</button>}
+      {v && <p>Loading...</p>}
+      {s.map((i) => (
+        <div key={i.id}>{i.n}</div>
+      ))}
+    </div>
+  );
+};
+
+```
+
+Clear Component "After Refactoring":-
+```
+// Clear component
+const ItemsList = ({ showCloseButton, handleClose }) => {
+  const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const getItems = async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch("/api");
+      const itemsData = await itemsData.json();
+      setItems(j);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <div>
+      {showCloseButton && <button onClick={handleClose}>Close</button>}
+      {isLoading && <p>Loading...</p>}
+      {items.map((item) => (
+        <div key={item.id}>{item.name}</div>
+      ))}
+    </div>
+  );
+};
+```
 
 *** 
 
@@ -108,6 +174,14 @@ The original code does not provide any error handling or edge cases checks which
 
 ### Avoiding Code Duplication #42
 
+#### What were the issues with duplicated code?
+- There are many duplicated calculations and this uses a lot of memory and affects performance
+- When want to change something in the code developer has to make the same change in the multiple places.
+  
+#### How did refactoring improve maintainability?
+Refactoring and applying DRY principle makes a single source of truth so if I want to fix somthing I fix it in one place and make it easy to add more functionalities and grow the code.
+
+#### Task
 Code inlcudes Duplicatoin:-
 ```
 function calculateTotalPrice(cart) {
@@ -259,12 +333,7 @@ displayCartSummary(shoppingCart);
 console.log("Free Shipping:", checkFreeShippingEligibility(shoppingCart));```
 ```
 
-#### What were the issues with duplicated code?
-- There are many duplicated calculations and this uses a lot of memory and affects performance
-- When want to change something in the code developer has to make the same change in the multiple places.
-  
-#### How did refactoring improve maintainability?
-Refactoring and applying DRY principle makes a single source of truth so if I want to fix somthing I fix it in one place and make it easy to add more functionalities and grow the code.
+
 
 
 ***
