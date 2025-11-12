@@ -86,3 +86,20 @@ See [Form.jsx](./react-project/src/components/Form.jsx)
 
 ***
 
+
+### Navigation with React Router #25
+
+#### What are the advantages of client-side routing?
+- Displaying only the required UI components
+- Preserve data states between pages
+- The server only needs to serve the initial HTML page so client-side routing reduces the load on server.
+  
+#### Task :-
+Review these files :-
+- [main.jsx](./react-project/src/main.jsx)
+- [App.jsx](./react-project/src/App.jsx)
+- [Profile.jsx](./react-project/src/pages/Profile.jsx)
+- [Home.jsx](./react-project/src/pages/Home.jsx)
+  
+
+
