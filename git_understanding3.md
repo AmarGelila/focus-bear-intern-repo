@@ -1,4 +1,4 @@
-## Reflection
+## staging vs committing Issue #53 Reflection
 
 #### What is the difference between staging and committing?
 
