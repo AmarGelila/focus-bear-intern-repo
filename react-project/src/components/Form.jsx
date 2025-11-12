@@ -6,9 +6,10 @@ function Form() {
   function handleAddToList() {
     console.log(item);
     console.log(items);
-
-    setItems([...items, item]);
-    setItem("");
+    if (item.trim() !== "") {
+      setItems([...items, item]);
+      setItem("");
+    }
   }
   return (
     <main>
@@ -33,12 +34,7 @@ function Form() {
       <div className="px-5 my-5">
         <ul>
           {items.map((item, index) => (
-            <li
-              key={index}
-              className="border border-blue-300 py-3 px-5 text-blue-700"
-            >
-              {item}
-            </li>
+            <ListItem item={item} key={index} />
           ))}
         </ul>
       </div>
@@ -46,4 +42,11 @@ function Form() {
   );
 }
 
+function ListItem({ item, key }) {
+  return (
+    <li key={key} className="border border-blue-300 py-3 px-5 text-blue-700">
+      {item}
+    </li>
+  );
+}
 export default Form;
