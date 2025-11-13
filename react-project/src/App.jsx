@@ -1,11 +1,6 @@
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
-// import HelloWorld from "./components/HelloWorld";
-// import Counter from "./components/Counter";
-// import Form from "./components/Form";
-
-// import UseEffectTask from "./components/UseEffectTask";
-// import UseMemoTask from "./components/UseMemoTask";
+import Profile from "./pages/Profile";
 export default function App() {
   return (
     <>
@@ -29,13 +24,6 @@ export default function App() {
           </li>
         </ul>
       </nav>
-      {/* 
-      <HelloWorld name={"Focus Bear"} />
-      <HelloWorld name={"Amar Gelila"} />
-      <Counter />
-      <Form />
-
-      <UseMemoTask /> */}
 
       <Routes>
         <Route path="/" element={<Home />}></Route>
