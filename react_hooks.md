@@ -67,3 +67,64 @@ function UseEffectTask() {
 
 export default UseEffectTask;
 ```
+
+***
+
+
+### ptimizing Performance with useMemo #23
+
+##### How does useMemo improve performance?
+useMemo improve performance by memorising values that uses expensive resources , and only re-calculate it when one of the dependencies changes.
+
+##### When should you avoid using useMemo?
+useMemo should be avoided in unnecessary situations such as simple calculations or small data , as it has trad-offs in memory
+
+##### What happens if you remove useMemo from your implementation?
+If I removed useMemo from UseMemoTask component the data (numbers) will be calculated every re-renders even if it is the same value as the previous render.
+
+##### Task :-
+Here it is a component that render a large set of numbers and only re-calculate numbers if maxNumber changes
+```
+import { useState, useMemo } from "react";
+function UseMemoTask() {
+  const [maxNumber, setMaxNumber] = useState(1000);
+
+  const numbers = useMemo(() => {
+    let result = [];
+    for (let i = 0; i <= maxNumber; i++) {
+      result.push(i);
+    }
+    return result;
+  }, [maxNumber]);
+
+  return (
+    <main>
+      <div className="p-3 mb-5 border-2">
+        <input
+          type="number"
+          name="maxNumber"
+          value={maxNumber}
+          onChange={(e) => setMaxNumber(+e.target.value)}
+        />
+      </div>
+      <div>
+        <ul className="flex items-center gap-x-3 gap-y-6 flex-wrap">
+          {numbers.map((number) => (
+            <Number value={number} key={number} />
+          ))}
+        </ul>
+      </div>
+    </main>
+  );
+}
+
+function Number({ value }) {
+  return (
+    <li className="rounded-t-full bg-rose-400 text-white font-bold p-3">
+      {value}
+    </li>
+  );
+}
+export default UseMemoTask;
+```
+***
