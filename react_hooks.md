@@ -128,3 +128,67 @@ function Number({ value }) {
 export default UseMemoTask;
 ```
 ***
+
+### Preventing Unnecessary Renders with useCallback #22
+
+##### What problem does useCallback solve?
+When a component re-renders, all of its functions are recreated, even if they are the same as in the previous render, which affects performance. useCallback optimizes performance by memoizing the function and does not recreate it until one of its dependencies changes.
+
+##### How does useCallback work differently from useMemo?
+Both are performance optimization techniques, but useCallback memoizes functions and useMemo memoizes values.
+
+##### When would useCallback not be useful?
+When one of its dependencies changes every re-render.
+
+
+##### Task :- 
+Here it is a component (UseCallBackTask) that passes a function to a child (PrimaryButton)
+and its function is memoized using useCallback() hook so the function does not change until one of its dependencies changes :-
+
+```
+import { useCallback, useState } from "react";
+import PrimaryButton from "./PrimaryButton";
+
+function UseCallBackTask() {
+  const [items, setItems] = useState([]);
+  const [item, setItem] = useState("");
+
+  const handleAddToList = useCallback(() => {
+    if (item.trim() !== "") {
+      setItems([...items, item]);
+      setItem("");
+    }
+  }, [items, item]);
+
+  return (
+    <main>
+      <form action="">
+        <input
+          type="text"
+          name="ListItem"
+          className="py-3 px-5 border border-blue-300 rounded-lg block mx-auto my-5 outline-blue-500 text-blue-700"
+          placeholder="Enter a list item"
+          value={item}
+          onChange={(e) => setItem(e.target.value)}
+        />
+      </form>
+      <PrimaryButton content="Add To Li st" handleClick={handleAddToList} />
+
+      <div className="px-5 my-5">
+        <ul>
+          {items.map((item, index) => (
+            <ListItem item={item} key={index} />
+          ))}
+        </ul>
+      </div>
+    </main>
+  );
+}
+
+function ListItem({ item }) {
+  return (
+    <li className="border border-blue-300 py-3 px-5 text-blue-700">{item}</li>
+  );
+}
+export default UseCallBackTask;
+```
