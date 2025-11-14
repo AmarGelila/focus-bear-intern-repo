@@ -1,6 +1,8 @@
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
+import UseCallBackTask from "./components/UseCallBackTask";
+import Counter from "./components/Counter";
 export default function App() {
   return (
     <>
@@ -24,7 +26,6 @@ export default function App() {
           </li>
         </ul>
       </nav>
-
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
