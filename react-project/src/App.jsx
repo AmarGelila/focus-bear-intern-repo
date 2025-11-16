@@ -1,8 +1,7 @@
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
-import UseCallBackTask from "./components/UseCallBackTask";
-import Counter from "./components/Counter";
+import FromikTask from "./components/FromikTask";
 export default function App() {
   return (
     <>
