@@ -1,6 +1,8 @@
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
+import AxiosTask from "./components/AxiosTask";
+
 export default function App() {
   return (
     <>
