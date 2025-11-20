@@ -12,6 +12,7 @@ function ReduxTask() {
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
   const [amount, setAmount] = useState(3);
+
   return (
     <main>
       <h1 className="text-3xl text-center text-red-600 p-5 mb-5">{count}</h1>
@@ -22,7 +23,7 @@ function ReduxTask() {
           name="increaseAmount"
           id="increaseAmount"
           min={0}
-          max={10}
+          max={1000}
           value={amount}
           onChange={(e) => setAmount(+e.target.value)}
           className="border border-red-600 p-3 rounded-lg text-red-600 hover:bg-red-600 hover:text-white hover:cursor-pointer transition-colors"
@@ -67,7 +68,20 @@ function ReduxTask() {
           </button>
         </li>
       </ul>
+
+      <Message />
     </main>
+  );
+}
+
+function Message() {
+  const count = useSelector(selectCount);
+  return (
+    <h3 className="text-xl font-bold text-center mt-8 bg-red-600 w-fit p-3 text-white mx-auto rounded-xl">
+      {`${count} has ${
+        count < 0 ? String(count).length - 1 : String(count).length
+      } digits`}{" "}
+    </h3>
   );
 }
 

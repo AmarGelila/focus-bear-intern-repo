@@ -5,7 +5,7 @@ import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import "./i18next/config.js";
 import { Provider } from "react-redux";
-import { store } from "./app/store.jsx";
+import { store } from "./app/store.js";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
