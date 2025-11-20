@@ -7,6 +7,15 @@
 - The application state is updated frequently
 
 
+### Using Selectors in Redux Toolkit #26
+
+##### What are the benefits of using selectors instead of directly accessing state?
+Redux Selectors enables minimizing the code and applying DRY principle , 
+rathar than writing ```state.counter.value``` every time I need the counter value 
+I can make a selector one time as ```selectCount = state.counter.value``` and use selectCount wherever I need using ```useSelector(selectCount)```.
+
+
+
 ##### Task :-
 
 [Store](./react-project/src/app)
