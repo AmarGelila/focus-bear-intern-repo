@@ -12,3 +12,19 @@ See :-
 - Simple Unit :- [sum.js](./unit-testing/src/utils/sum.js)
 - Simple Unit Test :- [sum.test.js](./unit-testing/src/utils/sum.test.js)
 
+
+***
+
+### Testing React Components with Jest & React Testing Library #18
+
+##### What are the benefits of using React Testing Library instead of testing implementation details?
+React Testing Library emulates user interaction , it fouces on the result of the code not the code itself , so it helps better achieve what user want.
+
+##### What challenges did you encounter when simulating user interaction?
+For Example when clicking on a button the test fail I have discovered that clicking is an async process so I have to wait for it.
+
+#### Task :- 
+See:-
+
+- [Components](./unit-testing/src/components)
+- [Mocks](./unit-testing/src/utils/__mocks__)
