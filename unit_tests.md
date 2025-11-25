@@ -28,3 +28,18 @@ See:-
 
 - [Components](./unit-testing/src/components)
 - [Mocks](./unit-testing/src/utils/__mocks__)
+
+
+***
+
+### Mocking API Calls in Jest #17
+
+##### Why is it important to mock API calls in tests?
+In unit testing we do not care about the server or APIs implmentation , so we should mock their response to make testing faster.
+
+##### What are some common pitfalls when testing asynchronous code?
+Possible request rejection , responses timeout and internal server errors.
+
+##### Task:-
+See :- [Posts Component](./unit-testing/src/components/Posts)
+
