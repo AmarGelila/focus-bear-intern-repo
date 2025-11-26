@@ -1,9 +1,14 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Posts from "./components/Posts/Posts";
+import Counter from "./features/Counter/Counter";
+import Posts from "./features/Posts/Posts";
 
+import { Provider } from "react-redux";
+import { store } from "./app/Store";
 function App() {
-  return <Posts />;
+  return (
+    <Provider store={store}>
+      <Posts />
+    </Provider>
+  );
 }
 
 export default App;
