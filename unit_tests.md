@@ -43,3 +43,25 @@ Possible request rejection , responses timeout and internal server errors.
 ##### Task:-
 See :- [Posts Component](./unit-testing/src/components/Posts)
 
+
+***
+
+### Testing Redux with Jest #16
+
+##### What was the most challenging part of testing Redux?
+Testing Redux Thunks takes more time to handle all actions and states
+##### How do Redux tests differ from React component tests?
+Redux Tests deals with action createors and reducers implmentaion , React component tests works from the perspective of the user, rathar than the implmentation it deals with what should be on the screen.
+
+##### Task:-
+see [Posts Features](./unit-testing/src/features/Posts)
+
+
+
+
+
+
+
+
+
+
