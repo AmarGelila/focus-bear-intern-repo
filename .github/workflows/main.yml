@@ -1,0 +1,30 @@
+name: Markdown Linting and Spellchecking
+
+on:
+  pull_request:
+    branches: [main]
+
+
+jobs:
+  markdown-lint-and-spellchecking:
+    name: Markdown Linting and Spellcheck
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: install dependencies
+        run: npm ci
+
+      - name: Run markdown lint
+        run: npm run lint:markdown
+
+      - name: Run Cspell
+        run: npm run spellcheck
+    
+  
